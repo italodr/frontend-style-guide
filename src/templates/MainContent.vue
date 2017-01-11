@@ -23,12 +23,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-    font-weight: normal;
-}
 .MainContent {
     height: 100vh;
     overflow: auto;
+    padding: 20px 50px;
     width: 80%;
 }
 </style>

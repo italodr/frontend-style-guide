@@ -34,6 +34,45 @@ body, html {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+}
+
+.Block {
+    margin: 0 0 30px;
+}
+
+.Block-title {
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+.Block-description {
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+
+.Block-samples {
+    border: solid #f1f1f1;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px 1px 0 1px;
+    padding: 50px;
+}
+
+.Block-code {
+    background: #f1f1f1;
+    border-radius: 0 0 4px 4px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    padding: 20px 50px;
+}
+
+.Block-code ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Block-code li {
+    line-height: 1.5;
+    margin: 0 0 5px;
 }
 </style>

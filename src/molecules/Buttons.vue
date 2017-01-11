@@ -1,13 +1,17 @@
 <template>
     <div class="Block">
-        <h1 class="Block-title">{{ title }}</h1>
+        <h2 class="Block-title">{{ title }}</h2>
         <p class="Block-description">{{ description }}</p>
-        
+
         <div class="Block-samples">
             <a class="Button" v-bind:href="link">{{ label }}</a>
             <a class="Button" v-bind:href="link">{{ label }}</a>
         </div>
-        <div class="Block-code" v-for="hint in hints">{{ hint.code }}</div>
+        <div class="Block-code">
+            <ul>
+                <li v-for="hint in hints">{{ hint.code }}</li>
+            </ul>
+        </div>
     </div>
 </template>
 
