@@ -5,7 +5,7 @@
         <h2>{{ subtitle }}</h2>
         <ul class="Sidebar-nav">
             <li class="Sidebar-section" v-for="section in sections">
-                <a class="Sidebar-sectionItem" v-on:click="toggleSubsection">{{ section.title }}</a>
+                <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection">{{ section.title }}</a>
                 <ul class="Sidebar-subnav" v-if="section.subsections">
                     <li class="Sidebar-subsection" v-for="subsection in section.subsections">
                         <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor">{{ subsection.title }}</a>
@@ -43,7 +43,7 @@ export default {
             ],
             methods: {
                 toggleSubsection: function (event) {
-                    console.log('Hello ' + this.name + '!')
+                    console.log('Hello', this)
                     console.log(event.target.tagName)
                 }
             }

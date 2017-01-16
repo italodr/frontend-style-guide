@@ -12,15 +12,11 @@ export default {
     components: {
         Buttons
     },
-    data () {
-        return {}
-    }
+    data () {}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.Components {
-    width: 100%;
-}
+<style lang="scss" scoped>
+.Components { width: 100%; }
 </style>

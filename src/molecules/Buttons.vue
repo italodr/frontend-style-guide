@@ -1,49 +1,47 @@
 <template>
-    <div class="Block">
-        <h2 class="Block-title">{{ title }}</h2>
-        <p class="Block-description">{{ description }}</p>
-
-        <div class="Block-samples">
-            <a class="Button" v-bind:href="link">{{ label }}</a>
-            <a class="Button" v-bind:href="link">{{ label }}</a>
-        </div>
-        <div class="Block-code">
-            <ul>
-                <li v-for="hint in hints">{{ hint.code }}</li>
-            </ul>
-        </div>
-    </div>
+    <block v-bind:obj="buttons"></block>
 </template>
 
 <script>
+import Block from '../organisms/Block'
+
 export default {
     name: 'Buttons',
+    components: {
+        Block
+    },
     data () {
         return {
-            title: 'Buttons',
-            description: 'Some description',
-            label: 'Submit',
-            link: '#',
-            hints: [
-                { code: '<a class="Button" href="link">Label</a>' },
-                { code: '<a class="Button Button--hollow" href="link">Label</a>' }
-            ]
+            buttons: {
+                title: 'Buttons',
+                description: 'Some description',
+                code: [
+                    '<a class="Button" v-bind:href="#">Label</a>',
+                    '<a class="Button Button--hollow" v-bind:href="#">Label</a>'
+                ]
+            }
         }
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
+/* Sample, it will be replaced by the compiled style */
 .Button {
     background: #bada55;
     border-radius: 4px;
     color: #333;
+    cursor: pointer;
     font-size: 14px;
     line-height: 1;
     padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
+
+    &:hover { opacity: .75; }
 }
+
+.Button { margin: 0 10px 0 0; }
 </style>
