@@ -2,16 +2,19 @@
     <div class="MainContent">
         <h1>{{ title }}</h1>
         <components></components>
+        <project></project>
     </div>
 </template>
 
 <script>
 import Components from '../pages/Components'
+import Project from '../project/Project'
 
 export default {
     name: 'MainContent',
     components: {
-        Components
+        Components,
+        Project
     },
     data () {
         return {

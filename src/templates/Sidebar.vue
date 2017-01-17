@@ -1,18 +1,23 @@
 <template>
     <div class="Sidebar">
-        <img class="Sidebar-logo" src="../assets/img/logo.png">
-        <h1>{{ title }}</h1>
-        <h2>{{ subtitle }}</h2>
-        <ul class="Sidebar-nav">
-            <li class="Sidebar-section" v-for="section in sections">
-                <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection">{{ section.title }}</a>
-                <ul class="Sidebar-subnav" v-if="section.subsections">
-                    <li class="Sidebar-subsection" v-for="subsection in section.subsections">
-                        <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor">{{ subsection.title }}</a>
+        <button class="Sidebar-toggle" type="button" v-on:click="methods.toggleSidebar">O</button>
+        <div class="Sidebar-scroll">
+            <div class="Sidebar-content">
+                <img class="Sidebar-logo" src="../assets/img/logo.png">
+                <h1>{{ title }}</h1>
+                <h2>{{ subtitle }}</h2>
+                <ul class="Sidebar-nav">
+                    <li class="Sidebar-section" v-for="section in sections">
+                        <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection">{{ section.title }}</a>
+                        <ul class="Sidebar-subnav" v-if="section.subsections">
+                            <li class="Sidebar-subsection" v-for="subsection in section.subsections">
+                                <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor">{{ subsection.title }}</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -58,14 +63,38 @@ export default {
     background: #f1f1f1;
     height: 100vh;
     min-width: 300px;
-    padding: 20px;
+    position: relative;
     width: 20%;
+
+    &-scroll,
+    &-content {
+        height: 100%;
+        width: 100%;
+    }
+
+    &-scroll { overflow: hidden; }
+
+    &-content {
+        box-sizing: content-box;
+        overflow-y: auto;
+        padding: 20px;
+    }
 
     &-logo {
         display: block;
         margin: 0 auto;
         max-width: 100px;
         width: 100%;
+    }
+
+    &-toggle {
+        background: #f1f1f1;
+        border: 0;
+        height: 48px;
+        left: 100%;
+        position: absolute;
+        top: 50px;
+        width: 48px;
     }
 }
 </style>
