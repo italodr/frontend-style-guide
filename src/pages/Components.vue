@@ -1,18 +1,20 @@
 <template>
     <div class="Components">
         <buttons></buttons>
+        <search></search>
     </div>
 </template>
 
 <script>
 import Buttons from '../molecules/Buttons'
+import Search from '../molecules/Search'
 
 export default {
     name: 'Components',
     components: {
-        Buttons
-    },
-    data () {}
+        Buttons,
+        Search
+    }
 }
 </script>
 

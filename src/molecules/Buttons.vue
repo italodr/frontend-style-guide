@@ -5,6 +5,8 @@
 <script>
 import Block from '../organisms/Block'
 
+let buttonLabel = 'Label';
+
 export default {
     name: 'Buttons',
     components: {
@@ -16,8 +18,8 @@ export default {
                 title: 'Buttons',
                 description: 'Some description',
                 code: [
-                    '<a class="Button" v-bind:href="#">Label</a>',
-                    '<a class="Button Button--hollow" v-bind:href="#">Label</a>'
+                    '<a class="Button" href="#">' + buttonLabel + '</a>',
+                    '<a class="Button Button--hollow" href="#">' + buttonLabel + '</a>'
                 ]
             }
         }

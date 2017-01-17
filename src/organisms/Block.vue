@@ -9,7 +9,7 @@
         <transition name="slide">
             <div class="Block-code" v-if="slide">
                 <ul>
-                    <li v-for="line in obj.code"><code class="language-markup">{{ line|removeAttr }}</code></li>
+                    <li v-for="line in obj.code"><pre><code class="language-markup">{{ line|removeAttr }}</code></pre></li>
                 </ul>
             </div>
         </transition>
@@ -21,6 +21,12 @@
 export default {
     name: 'Block',
     props: ['obj'],
+    filters: {
+        removeAttr (value) {
+            let search = /(v-bind:|v-for)/
+            return value.replace(new RegExp(search, 'g'), '')
+        }
+    },
     data () {
         return {
             slide: false
@@ -31,7 +37,7 @@ export default {
 
 <style lang="scss">
 .Block {
-    margin: 0 0 30px;
+    margin: 8vh 0 15vh;
 
     &-title {
         font-size: 28px;
