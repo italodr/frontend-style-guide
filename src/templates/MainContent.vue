@@ -2,19 +2,19 @@
     <div class="MainContent">
         <h1>{{ title }}</h1>
         <components></components>
-        <project></project>
+        <custom></custom>
     </div>
 </template>
 
 <script>
 import Components from '../pages/Components'
-import Project from '../project/Project'
+import Custom from '../custom/Custom'
 
 export default {
     name: 'MainContent',
     components: {
         Components,
-        Project
+        Custom
     },
     data () {
         return {
@@ -26,10 +26,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.MainContent {
-    height: 100vh;
-    overflow: auto;
-    padding: 20px 50px;
-    width: 80%;
-}
+    @import '../assets/scss/templates/maincontent';
 </style>

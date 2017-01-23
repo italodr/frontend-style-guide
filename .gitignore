@@ -3,6 +3,5 @@ node_modules/
 dist/
 npm-debug.log
 test/unit/coverage
-src/project/*
-!src/project/Project.vue
-!src/project/CustomSample.vue
+src/custom/*
+!src/custom/*.dist

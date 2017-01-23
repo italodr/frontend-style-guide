@@ -1,24 +1,31 @@
-# frontend-styleguide
+# Frontend Styleguide
 
-> An extendable Vue.js projects to generate styleguides
+> An extendable Vue.js projects to generate Styleguides
+
+## Need to...
+Script -> yarn run init
+    verificar si no existe un Custom.vue
+    Copiar Customs sin .dist
+     -- same para custom-navigation en templates
+    yarn
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn run dev
 
 # build for production with minification
-npm run build
+yarn run build
 
 # run unit tests
-npm run unit
+yarn run unit
 
 # run all tests
-npm test
+yarn test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

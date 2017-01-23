@@ -1,0 +1,31 @@
+$c-black: #000;
+$c-white: #fff;
+
+$c-darkest: #111;
+
+$c-lightest: #f1f1f1;
+
+/* Media Queries */
+$s0: (0, 479px);
+$s480: (480px, 639px);
+$s640: (640px, 767px);
+$s768: (768px, 959px);
+$s960: (960px, 1023px);
+$s1024: (1024px, 1199px);
+$s1200: (1200px, 1439px);
+$s1440: (1440px, 1919px);
+$s1920: (1920px, 0);
+
+$breakpoints: (
+    (xxs, $s0),
+    (xs, $s480),
+    (sm, $s640),
+    (md, $s768),
+    (lg, $s960),
+    (xl, $s1024),
+    (xxl, $s1200),
+    (sxl, $s1440),
+    (sxxl, $s1920)
+);
+
+$screen: "only screen" !default;

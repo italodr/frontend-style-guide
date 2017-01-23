@@ -1,0 +1,14 @@
+<template>
+    <baseSample></baseSample>
+</template>
+
+<script>
+import BaseSample from './BaseSample'
+
+export default {
+    name: 'Custom',
+    components: {
+        BaseSample
+    }
+}
+</script>

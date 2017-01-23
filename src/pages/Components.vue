@@ -2,18 +2,21 @@
     <div class="Components">
         <buttons></buttons>
         <search></search>
+        <formularies></formularies>
     </div>
 </template>
 
 <script>
 import Buttons from '../molecules/Buttons'
 import Search from '../molecules/Search'
+import Formularies from '../molecules/Formularies'
 
 export default {
     name: 'Components',
     components: {
         Buttons,
-        Search
+        Search,
+        Formularies
     }
 }
 </script>
