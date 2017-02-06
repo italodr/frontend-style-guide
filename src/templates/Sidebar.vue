@@ -8,10 +8,10 @@
                 <h2>{{ subtitle }}</h2>
                 <ul class="Sidebar-nav">
                     <li class="Sidebar-section" v-for="section in sections">
-                        <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection">{{ section.title }}</a>
+                        <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection" v-if="section.title">{{ section.title }}</a>
                         <ul class="Sidebar-subnav" v-if="section.subsections">
                             <li class="Sidebar-subsection" v-for="subsection in section.subsections">
-                                <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor">{{ subsection.title }}</a>
+                                <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor" v-if="subsection.title">{{ subsection.title }}</a>
                                 <ul class="Sidebar-anchors" v-if="subsection.anchors">
                                     <li class="Sidebar-anchor" v-for="anchor in subsection.anchors">
                                         <a class="Sidebar-anchorItem" v-bind:href="anchor.anchor">{{ anchor.title }}</a>

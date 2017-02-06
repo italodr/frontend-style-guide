@@ -43,9 +43,27 @@
             &::after {
                 border-radius: 4px 0 0 4px;
                 right: 4px;
-                width: 210px;
+                width: 225px;
             }
         }
+    }
+
+    &-sectionItem,
+    &-anchorItem,
+    &-subsectionItem {
+        border: solid #f1f1f1;
+        border-width: 0 0 1px;
+        display: block;
+        font-weight: 700;
+        padding: 4px 10px;
+    }
+
+    &-anchorItem {
+        color: #333;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 4px 10px 4px 20px;
+        text-decoration: none;
     }
 
     &-scroll,
