@@ -55,7 +55,7 @@
         border-width: 0 0 1px;
         display: block;
         font-weight: 700;
-        padding: 4px 10px;
+        padding: 6px 10px;
     }
 
     &-anchorItem {
@@ -64,6 +64,10 @@
         font-weight: 400;
         padding: 4px 10px 4px 20px;
         text-decoration: none;
+    }
+
+    &-anchor:last-child {
+        .Sidebar-anchorItem { border: 0; }
     }
 
     &-scroll,

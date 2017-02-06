@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import BaseSample from './BaseSample'
+import BaseSample from './organisms/BaseSample'
 
 export default {
     name: 'Custom',

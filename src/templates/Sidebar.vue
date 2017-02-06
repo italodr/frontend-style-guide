@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import customNavigation from './custom-navigation'
+import customNavigation from '../custom/data/custom-navigation'
 
 let navigation = [
     {

@@ -1,5 +1,5 @@
 <template>
-    <block v-bind:obj="buttons"></block>
+    <block v-bind:obj="component"></block>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     },
     data () {
         return {
-            buttons: {
+            component: {
                 title: 'Buttons',
                 description: 'Some description',
                 code: [
