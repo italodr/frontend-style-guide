@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Sidebar from './templates/Sidebar'
-import MainContent from './templates/MainContent'
+import Sidebar from './framework/organisms/Sidebar'
+import MainContent from './framework/organisms/MainContent'
 
 export default {
     name: 'app',
@@ -19,5 +19,15 @@ export default {
 </script>
 
 <style lang="scss">
-    @import 'assets/scss/templates/app';
+@import './assets/scss/base/globals';
+@import './assets/scss/app';
+@import './assets/scss/vendors/prism';
+
+#app {
+    color: #2c3e50;
+    display: flex;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 </style>

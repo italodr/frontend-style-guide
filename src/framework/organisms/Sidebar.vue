@@ -1,5 +1,64 @@
-@import '../base/variables';
-@import '../utils/mixins';
+<template>
+    <div class="Sidebar">
+        <button class="Sidebar-toggle" type="button" v-on:click="methods.toggleSidebar"></button>
+        <div class="Sidebar-scroll">
+            <div class="Sidebar-content">
+                <img class="Sidebar-logo" src="../../assets/img/logo.png">
+                <h1 class="Sidebar-title">{{ title }}</h1>
+                <h2 class="Sidebar-subtitle">{{ subtitle }}</h2>
+                <ul class="Sidebar-nav">
+                    <li class="Sidebar-section" v-for="section in sections">
+                        <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection" v-if="section.title">{{ section.title }}</a>
+                        <ul class="Sidebar-subnav" v-if="section.subsections">
+                            <li class="Sidebar-subsection" v-for="subsection in section.subsections">
+                                <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor" v-if="subsection.title">{{ subsection.title }}</a>
+                                <ul class="Sidebar-anchors" v-if="subsection.anchors">
+                                    <li class="Sidebar-anchor" v-for="anchor in subsection.anchors">
+                                        <a class="Sidebar-anchorItem" v-bind:href="anchor.anchor">{{ anchor.title }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import mainNavigation from '../../data/main-navigation'
+import customNavigation from '../../data/custom-navigation'
+
+let navigation = [
+    mainNavigation,
+    customNavigation
+];
+
+export default {
+    name: 'Sidebar',
+    data () {
+        return {
+            title: 'Frontend Style Guide',
+            subtitle: 'A Pattern UI Library',
+            sections: navigation,
+            methods: {
+                toggleSubsection: function (event) {
+                    console.log('Hello', this)
+                    console.log(event.target.tagName)
+                },
+                toggleSidebar: function (event) {
+                    // event.target.parentElement
+                    document.body.classList.toggle('sidebar-open');
+                }
+            }
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+@import '../../assets/scss/app';
 
 .Sidebar {
     background: $c-lightest;
@@ -14,6 +73,17 @@
     z-index: 9;
 
     .sidebar-open & { transform: translateX(0); }
+
+    &-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    &-subtitle {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+    }
 
     &-section {
         background: $c-white;
@@ -86,7 +156,7 @@
 
     &-logo {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 1rem;
         max-width: 100px;
         width: 100%;
     }
@@ -146,3 +216,4 @@
         &-toggle { display: none; }
     }
 }
+</style>

@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import Block from '../organisms/Block.vue'
-import Tabs from '../organisms/Tabs.vue'
-import Tab from '../molecules/Tab.vue'
+import Block from '../../framework/organisms/Block.vue'
+import Tabs from '../../framework/molecules/Tabs.vue'
+import Tab from '../../framework/atoms/Tab.vue'
 
 export default {
     components: {
@@ -66,7 +66,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-
 </style>

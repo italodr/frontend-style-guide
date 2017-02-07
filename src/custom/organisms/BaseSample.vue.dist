@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Block from '../../organisms/Block'
+import Block from '../../framework/organisms/Block'
 
 let html = `
 <div class="BaseSample">

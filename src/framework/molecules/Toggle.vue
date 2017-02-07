@@ -1,35 +1,28 @@
-.Block {
-    margin: 8vh 0 15vh;
+<template>
+    <div class="Toggle">
+        <transition name="slide">
+            <div class="Toggle-content" v-if="slide">
+                <slot></slot>
+            </div>
+        </transition>
+        <div class="Toggle-button" v-on:click="slide = !slide">{{ slide ? 'Hide code sample' : 'Show code sample' }}</div>
+    </div>
+</template>
 
-    &-title {
-        font-size: 28px;
-        margin: 0 0 10px;
+<script>
+export default {
+    name: 'Toggle',
+    data () {
+        return { slide: false }
     }
+}
+</script>
 
-    &-description {
-        font-size: 16px;
-        margin: 0 0 20px;
-    }
+<style lang="scss" scoped>
+.Toggle {
+    background: #f1f1f1;
 
-    &-samples {
-        display: block;
-        padding: 50px 0;
-    }
-
-    &-code {
-        background: #f1f1f1;
-        font-family: "Lucida Console", Monaco, monospace;
-        font-size: 14px;
-        padding: 20px 50px;
-
-        li {
-            line-height: 1.5;
-            margin: 0 0 5px;
-        }
-    }
-
-    &-toggle {
-        background: #f1f1f1;
+    &-button {
         border: 1px solid #f1f1f1;
         border-radius: 0 0 4px 4px;
         border-width: 0 1px 0 1px;
@@ -45,7 +38,7 @@
     }
 }
 
-/* Code slide animation */
 .slide-enter-active, .slide-leave-active { transition: all .3s ease-in-out; }
 .slide-enter, .slide-leave-to { max-height: 0; }
 .slide-enter-to, .slide-leave { max-height: 1000px; }
+</style>

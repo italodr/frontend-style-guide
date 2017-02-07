@@ -2,24 +2,18 @@
     <div class="Components">
         <breakpoints></breakpoints>
         <buttons></buttons>
-        <search></search>
-        <formularies></formularies>
     </div>
 </template>
 
 <script>
-import Breakpoints from '../molecules/Breakpoints'
-import Buttons from '../molecules/Buttons'
-import Search from '../molecules/Search'
-import Formularies from '../molecules/Formularies'
+import Breakpoints from '../../base/resources/Breakpoints.vue'
+import Buttons from '../../base/atoms/Buttons.vue'
 
 export default {
     name: 'Components',
     components: {
         Breakpoints,
-        Buttons,
-        Search,
-        Formularies
+        Buttons
     }
 }
 </script>
