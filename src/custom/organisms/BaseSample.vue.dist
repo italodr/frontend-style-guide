@@ -1,32 +1,43 @@
 <template>
-    <block v-bind:obj="component"></block>
+    <block v-bind:obj="component">
+        <div class="Block-samples">
+            <div class="BaseSample">
+                <img class="BaseSample-image" src="http://lorempixel.com/300/300">
+                <div class="BaseSample-info">
+                    He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
+                </div>
+            </div>
+        </div>
+        <toggle>
+            <markup language="markup">
+                <div class="BaseSample">
+                    <img class="BaseSample-image" src="http://lorempixel.com/300/300">
+                    <div class="BaseSample-info">
+                        He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
+                    </div>
+                </div>
+            </markup>
+        </toggle>
+    </block>
 </template>
 
 <script>
 import Block from '../../framework/organisms/Block'
-
-let html = `
-<div class="BaseSample">
-    <img class="BaseSample-image" src="http://lorempixel.com/300/300">
-    <div class="BaseSample-info">
-        He says the restraining bolt has short circuited his recording system. He suggests that if you remove the bolt, he might be able to play back the entire recording. H'm? Oh, yeah, well, I guess you're too small to run away on me if I take this off! Okay. There you go. Well, wait a minute. Where'd she go? Bring her back! Play back the entire message. What message? The one you're carrying inside your rusty innards! Luke? Luke! Come to dinner! All right, I'll be right there, Aunt Beru. I'm sorry, sir, but he appears to have picked up a slight flutter. Well, see what you can do with him. I'll be right back. Just you reconsider playing that message for him. No, I don't think he likes you at all. No, I don't like you either.
-    </div>
-</div>
-`;
+import Toggle from '../../framework/molecules/Toggle.vue'
+import Markup from '../../framework/atoms/Markup'
 
 export default {
     name: 'BaseSample',
     components: {
-        Block
+        Block,
+        Toggle,
+        Markup
     },
     data () {
         return {
             component: {
                 title: 'Base Sample',
-                description: 'A base file of custom components for a project style guide, isolating it from the base/common style guide. You can comment this import in Custom.vue',
-                code: [
-                    html
-                ]
+                description: 'A base file of custom components for a project style guide, isolating it from the base/common style guide. You can comment this import in Custom.vue'
             }
         }
     }
