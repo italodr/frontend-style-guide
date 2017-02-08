@@ -2,12 +2,8 @@
 
 > An extendable Vue.js projects to generate Styleguides
 
-## Need to...
-Script -> yarn run init
-    verificar si no existe un Custom.vue
-    Copiar Customs sin .dist
-     -- same para custom-navigation en templates
-    yarn
+
+**This is a Work in Progress project**
 
 ## Build Setup
 
