@@ -1,7 +1,7 @@
 {
   "name": "frontend-styleguide",
   "version": "1.0.0",
-  "description": "An extendable Vue.js projects to generate styleguides",
+  "description": "An extendable Vue.js project to generate styleguides",
   "author": "Italo <italodr@gmail.com>",
   "private": true,
   "scripts": {
