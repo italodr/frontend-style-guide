@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss">
 @import './assets/scss/base/globals';
+@import './assets/scss/utils/utilities';
 @import './assets/scss/app';
 @import './assets/scss/vendors/prism';
 

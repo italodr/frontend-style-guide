@@ -1,9 +1,12 @@
 <template>
     <div class="Block">
-        <h2 class="Block-title">{{ obj.title }}</h2>
-        <p class="Block-description">{{ obj.description }}</p>
-        <slot>
-            <div class="Block-samples">
+        <h2 class="Block-title"><slot name="title"></slot></h2>
+        <p class="Block-description"><slot name="description"></slot></p>
+        <div class="Block-content">
+            <slot name="content"></slot>
+        </div>
+        <slot name="toggle"></slot>
+            <!-- <div class="Block-samples">
                 <span v-for="line in obj.code" v-html="line"></span>
             </div>
             <toggle>
@@ -11,7 +14,7 @@
                     <li v-for="line in obj.code"><pre><code class="language-markup">{{ line|removeAttr }}</code></pre></li>
                 </ul>
             </toggle>
-        </slot>
+        </slot> -->
     </div>
 </template>
 
