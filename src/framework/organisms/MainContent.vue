@@ -1,19 +1,19 @@
 <template>
     <div class="MainContent">
         <h1 class="MainContent-title">{{ title }}</h1>
-        <components></components>
+        <basic></basic>
         <custom></custom>
     </div>
 </template>
 
 <script>
-import Components from '../pages/Components'
+import Basic from '../../basic/Basic.vue'
 import Custom from '../../custom/Custom'
 
 export default {
     name: 'MainContent',
     components: {
-        Components,
+        Basic,
         Custom
     },
     data () {

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 
+import config from './data/config.js'
+
 /* eslint-disable no-new */
 Vue.filter('removeAttr', function (value) {
     let search = /(v-bind:|v-for)/
@@ -10,5 +12,10 @@ Vue.filter('removeAttr', function (value) {
 new Vue({
     el: '#app',
     template: '<App/>',
-    components: { App }
+    components: { App },
+    data () {
+        return {
+            config: config
+        }
+    }
 })

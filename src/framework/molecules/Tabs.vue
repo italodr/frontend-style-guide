@@ -20,20 +20,25 @@ export default{
     }
 }
 </script>
-<style>
-.nav-tabs {
-    background-color: #eeeeee;
-    padding-top:5px;
-    padding-left:5px;
-    border: 1px solid #ddd;
+<style lang="scss">
+.Tabs {
+    &-item {
+        background: rgba(#f1f1f1, .35);
+        border: solid #e5e5e5;
+        border-radius: 0;
+        border-width: 0 0 0 1px;
+        cursor: pointer;
+        font-size: .75rem;
+        padding: 12px 24px;
 
-}
+        &:first-child { border: 0; }
+        &:hover, &.active { background: #f1f1f1; }
+    }
 
-.tab-content {
-    color : #000000;
-    background-color: #ffffff;
-    padding : 5px 15px;
-    margin-top: -1px;
-    border: 1px solid #ddd;
+    &-content {
+        background-color: #f1f1f1;
+        padding : 5px 15px;
+        margin-top: -1px;
+    }
 }
 </style>

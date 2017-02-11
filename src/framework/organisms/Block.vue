@@ -5,6 +5,7 @@
         <div class="Block-content">
             <slot name="content"></slot>
         </div>
+        <slot name="tabs"></slot>
         <slot name="toggle"></slot>
             <!-- <div class="Block-samples">
                 <span v-for="line in obj.code" v-html="line"></span>

@@ -1,6 +1,8 @@
 <template>
     <block>
-        <div class="Block-samples" v-html="{{ markup }}"></div>
+        <div slot="title">{{ title }}</div>
+        <div slot="description">{{ description }}</div>
+        <div class="Block-samples" slot="content" v-html="markup"></div>
         <toggle>
             <markup language="markup">{{ markup }}</markup>
         </toggle>
@@ -13,12 +15,11 @@ import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
 let markup = `
-<label class="Checkbox"><input class="Checkbox-input" type="checkbox" name="my-checkbox" value="1" /></label>
-<label class="Checkbox"><input class="Checkbox-input" type="checkbox" name="my-checkbox" value="1" disabled /></label>
+<label class="FormLabel">Este es un label</label>
 `
 
 export default {
-    name: 'FormCheckboxes',
+    name: 'FormLabels',
     components: {
         Block,
         Toggle,
@@ -26,7 +27,7 @@ export default {
     },
     data () {
         return {
-            title: 'Form Checkboxes',
+            title: 'Form Labels',
             description: 'Some description',
             markup: markup
         }
@@ -35,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
-.FormCheckbox {
+.FormLabel {
 
 }
 </style>

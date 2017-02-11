@@ -168,9 +168,10 @@ export default {
         cursor: pointer;
         height: 48px;
         left: 100%;
+        opacity: .5;
         outline: none;
         position: absolute;
-        top: 20px;
+        top: 80px;
         width: 48px;
         z-index: 10;
 
@@ -188,8 +189,10 @@ export default {
 
         &::before { top: 21px; }
         &::after { bottom: 21px; }
+        &:hover { opacity: 1; }
 
         .sidebar-open & {
+            opacity: 1;
             transform: rotate(90deg);
             transform-origin: center;
 

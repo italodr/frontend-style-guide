@@ -1,6 +1,8 @@
 <template>
     <block>
-        <div class="Block-samples" v-html="{{ markup }}"></div>
+        <div slot="title">{{ title }}</div>
+        <div slot="description">{{ description }}</div>
+        <div class="Block-samples" slot="content" v-html="markup"></div>
         <toggle>
             <markup language="markup">{{ markup }}</markup>
         </toggle>
@@ -13,12 +15,13 @@ import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
 let markup = `
-<label class="Radio"><input class="Radio-input" type="radio" name="my-radio" value="1" /></label>
-<label class="Radio"><input class="Radio-input" type="radio" name="my-radio" value="1" disabled /></label>
+<textarea class="FormTextarea" name="my-textarea"></textarea>
+<textarea class="FormTextarea" name="my-textarea" disabled></textarea>
+<textarea class="FormTextarea" name="my-textarea" readonly></textarea>
 `
 
 export default {
-    name: 'FormRadios',
+    name: 'FormTextareas',
     components: {
         Block,
         Toggle,
@@ -26,7 +29,7 @@ export default {
     },
     data () {
         return {
-            title: 'Form Radios',
+            title: 'Form textareas',
             description: 'Some description',
             markup: markup
         }
@@ -35,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-.FormRadio {
+.FormTextarea {
 
 }
 </style>

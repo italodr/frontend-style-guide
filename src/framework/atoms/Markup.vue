@@ -1,11 +1,12 @@
 <template>
     <div class="Markup">
-        <pre><code :class="'language-' + language" ref="markup">{{ code }}</code></pre>
+        <pre><code ref="markup" :class="'language-' + language" v-html="code"></code></pre>
     </div>
 </template>
 
 <script>
 import Prism from 'prismjs'
+import beautifyJS, { html as beautifyHTML, css as beautifyCSS } from 'js-beautify'
 
 // Prism.setDefaults({
 //     'remove-trailing': true,
@@ -22,7 +23,7 @@ import Prism from 'prismjs'
 export default{
     props: ['language', 'code'],
     mounted () {
-        let html = Prism.highlight(this.code, Prism.languages.markup)
+        let html = Prism.highlight(beautifyHTML(this.code), Prism.languages[this.language])
         this.$refs.markup.innerHTML = html
     }
 }
@@ -32,6 +33,10 @@ export default{
 .Markup {
     width: 100%;
 
-    code { white-space: normal; }
+    pre {
+        font-size: 14px;
+        overflow: auto;
+        padding: 2rem;
+    }
 }
 </style>

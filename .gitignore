@@ -4,6 +4,8 @@ dist/
 npm-debug.log
 test/unit/coverage
 src/data/**/*.js
+!src/data/**/config.js
+!src/data/**/colors.js
 !src/data/**/main-navigation.js
 src/custom/**/*.js
 src/custom/**/*.vue
