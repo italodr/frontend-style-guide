@@ -6,6 +6,7 @@
 
 <script>
 import Prism from 'prismjs'
+import 'prismjs/components/prism-scss.js';
 import beautifyJS, { html as beautifyHTML, css as beautifyCSS } from 'js-beautify'
 
 // Prism.setDefaults({
@@ -23,7 +24,7 @@ import beautifyJS, { html as beautifyHTML, css as beautifyCSS } from 'js-beautif
 export default{
     props: ['language', 'code'],
     mounted () {
-        let html = Prism.highlight(beautifyHTML(this.code), Prism.languages[this.language])
+        let html = Prism.highlight(this.code, Prism.languages[this.language])
         this.$refs.markup.innerHTML = html
     }
 }
