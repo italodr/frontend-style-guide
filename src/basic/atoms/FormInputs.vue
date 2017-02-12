@@ -3,8 +3,8 @@
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
-        <toggle>
-            <markup language="markup">{{ markup }}</markup>
+        <toggle slot="toggle">
+            <markup language="markup" :code="markup"></markup>
         </toggle>
     </block>
 </template>
@@ -57,10 +57,29 @@ export default {
 @import '../../../node_modules/flatpickr/dist/flatpickr.min';
 
 .FormInput {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 8px 12px;
+    width: 100%;
 
-    &::-webkit-input-placeholder { color: #ccc; }
-    &:-moz-placeholder { color: #ccc; }
-    &::-moz-placeholder { color: #ccc; }
-    &:-ms-input-placeholder { color: #ccc; }
+    &:disabled {
+        background: #e5e5e5;
+        cursor: not-allowed;
+    }
+
+    &:read-only {
+        color: #ccc;
+        cursor: not-allowed;
+        font-style: italic;
+    }
+
+    &::-webkit-input-placeholder { color: #e5e5e5; }
+    &:-moz-placeholder { color: #e5e5e5; }
+    &::-moz-placeholder { color: #e5e5e5; }
+    &:-ms-input-placeholder { color: #e5e5e5; }
 }
+
+/* Demo */
+.FormInput { margin: 0 0 .5rem; }
 </style>

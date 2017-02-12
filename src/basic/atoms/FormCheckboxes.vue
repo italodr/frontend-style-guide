@@ -3,8 +3,8 @@
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
-        <toggle>
-            <markup language="markup">{{ markup }}</markup>
+        <toggle slot="toggle">
+            <markup language="markup" :code="markup"></markup>
         </toggle>
     </block>
 </template>
@@ -15,8 +15,9 @@ import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
 let markup = `
-<label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" /></label>
-<label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" disabled /></label>
+<label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" /> Sample of a checkbox</label>
+<label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" /> Sample of a checkbox</label>
+<label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" disabled /> Sample of a disabled checkbox</label>
 `
 
 export default {

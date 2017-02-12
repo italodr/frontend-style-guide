@@ -1,7 +1,7 @@
 <template>
     <div class="Tabs">
         <button class="Tabs-item" :class="{ active: (activeTab === tab) }" v-for="tab in tabs" @click="activate(tab)">{{ tab }}</button>
-        <slot></slot>
+        <slot name="tab"></slot>
     </div>
 </template>
 <script>

@@ -72,7 +72,10 @@ export default {
     width: 20%;
     z-index: 9;
 
-    .sidebar-open & { transform: translateX(0); }
+    .sidebar-open & {
+        box-shadow: 5px 0 6px -4px hsla(0, 60%, 0, .3);
+        transform: translateX(0);
+    }
 
     &-title {
         font-size: 1.2rem;
@@ -121,7 +124,7 @@ export default {
     &-sectionItem,
     &-anchorItem,
     &-subsectionItem {
-        border: solid #f1f1f1;
+        border: solid $c-lightest;
         border-width: 0 0 1px;
         display: block;
         font-weight: 700;
@@ -210,7 +213,7 @@ export default {
         }
     }
 }
-
+/*
 @include breakpoint($s1024) {
     .Sidebar {
         position: static;
@@ -219,4 +222,5 @@ export default {
         &-toggle { display: none; }
     }
 }
+*/
 </style>

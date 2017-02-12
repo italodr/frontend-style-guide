@@ -38,24 +38,8 @@ export default {
         font-size: 2rem;
         font-weight: 700;
     }
-
-    &::before {
-        background: hsla(0, 100%, 0%, .75);
-        content: '';
-        height: 100%;
-        left: 0;
-        opacity: 0;
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        transition: opacity .5s linear;
-        width: 100%;
-        z-index: 8;
-
-        .sidebar-open & { opacity: 1; }
-    }
 }
-
+/*
 @include breakpoint($s1024) {
     .MainContent {
         width: 80%;
@@ -63,4 +47,5 @@ export default {
         &::before { content: none; }
     }
 }
+*/
 </style>

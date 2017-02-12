@@ -42,22 +42,29 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-/* Sample, it will be replaced by the compiled style */
 .BaseSample {
-    display: flex;
-    font-size: 16px;
+    font-size: 1rem;
 
-    &-image {
-        flex: 0 0 300px;
-        width: 100%;
-    }
+    &-image { margin: 0 0 1rem; }
 
     &-info {
-        line-height: 1.25;
-        padding: 0 0 0 30px;
+        line-height: 1.2;
         width: 100%;
+    }
+}
+
+@media screen and ('min-width: 768px') {
+    .BaseSample {
+        display: flex;
+
+        &-image {
+            flex: 0 0 300px;
+            margin: 0;
+            width: 100%;
+        }
+
+        &-info { padding: 0 0 0 30px; }
     }
 }
 </style>

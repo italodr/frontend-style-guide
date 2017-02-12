@@ -1,1 +1,15 @@
+@import "flex-grid";
+
 .u-hidden { display: none; }
+.u-hide { display: none; }
+.u-show { display: block; }
+
+@each $val in $breakpoints {
+    $namespace: nth($val, 1);
+    $breakpoint: nth($val, 2);
+
+    @include breakpoint($breakpoint) {
+        .u-hide--#{$namespace} { display: none; }
+        .u-show--#{$namespace} { display: block; }
+    }
+}

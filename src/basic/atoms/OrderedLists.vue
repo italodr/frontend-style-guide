@@ -49,6 +49,10 @@ export default {
 
 <style lang="scss">
 .OrderedList {
+    list-style: decimal;
+    margin: 0 0 0 1rem;
+    padding: 0 0 0 1rem;
 
+    .OrderedList { list-style: lower-alpha; }
 }
 </style>

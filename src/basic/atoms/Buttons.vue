@@ -15,14 +15,16 @@ import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
 let markup = `
-<a class="Button" role="button" href="#">Submit</a>
-<a class="Button Button--hollow" role="button" href="#">Submit</a>
+<a class="Button" role="button" href="#">Link Button</a>
+<a class="Button Button--hollow" role="button" href="#">Link Button</a>
+<a class="Button is-disabled" role="button" href="#">Disabled Link Button</a>
 <span class="Button" role="button" tabindex="0">Span Button</span>
 
 <input class="Button" type="submit" value="Submit Input">
 <input class="Button" type="reset" value="Reset Input">
 <input class="Button" type="button" value="Button Input">
 <button class="Button" type="button">Submit Button</button>
+<button class="Button" type="button" disabled>Disabled Submit Button</button>
 `
 
 export default {
@@ -44,7 +46,7 @@ export default {
 
 <style lang="scss">
 .Button {
-    background: #bada55;
+    background: #61bfad;
     border: 0;
     border-radius: 4px;
     color: #333;
@@ -62,7 +64,7 @@ export default {
        -moz-user-select: none;
         -ms-user-select: none;
 
-    &:hover { background: lighten(#bada55, 15); }
+    &:hover { background: lighten(#61bfad, 15); }
 
     &::-moz-focus-inner {
         border: 0;

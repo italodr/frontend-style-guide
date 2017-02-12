@@ -19,9 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/scss/app';
 @import './assets/scss/base/globals';
 @import './assets/scss/utils/utilities';
-@import './assets/scss/app';
 @import './assets/scss/vendors/prism';
 
 #app {

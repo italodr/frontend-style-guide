@@ -3,8 +3,8 @@
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
-        <toggle>
-            <markup language="markup">{{ markup }}</markup>
+        <toggle slot="toggle">
+            <markup language="markup" :code="markup"></markup>
         </toggle>
     </block>
 </template>

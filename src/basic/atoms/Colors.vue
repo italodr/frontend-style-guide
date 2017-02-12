@@ -19,13 +19,15 @@
             </div>
         </div>
         <tabs slot="tabs">
-            <tab label="Sass Variables" selected>
-                <markup language="scss" :code="colorsVars()"></markup>
+            <tab slot="tab" label="Sass Variables" selected>
+                <markup slot="tabContent" language="scss" :code="colorsSass().vars"></markup>
             </tab>
-            <tab label="Options">Options tab</tab>
-            <tab label="Tasks">Tasks tab</tab>
-            <tab label="Other stuff">Other stuff</tab>
-            <tab label="Styling">Styling tab</tab>
+            <tab slot="tab" label="Sass Class Array">
+                <markup slot="tabContent" language="scss" :code="colorsSass().arr"></markup>
+            </tab>
+            <tab slot="tab" label="Sass Class Helpers">
+                <markup slot="tabContent" language="scss" :code="helpers"></markup>
+            </tab>
         </tabs>
     </block>
 </template>
@@ -41,6 +43,25 @@ import Block from '../../framework/organisms/Block'
 
 import colors from '../../data/colors.js'
 
+let helpers = `
+@each $name, $color in $colors {
+    .c-#{$name} { color: #{$color}; }
+    .bg-#{$name} { background: #{$color}; }
+
+    .c-hover-#{$name}:hover {
+        @include breakpoint($s768) {
+            color: #{$color};
+        }
+    }
+
+    .bg-hover-#{$name}:hover {
+        @include breakpoint($s768) {
+            background: #{$color};
+        }
+    }
+}
+`
+
 export default {
     name: 'Colors',
     components: {
@@ -51,24 +72,31 @@ export default {
         Tab
     },
     methods: {
-        colorsVars: function () {
-            let vars = '$colors:'
+        colorsSass: function () {
+            let arr = '$colors:'
+            let vars = ''
 
             Object.keys(colors).forEach(function (key) {
                 Object.keys(colors[key].colors).forEach(function (name, index) {
-                    vars += `
+                    arr += `
     (${name}, $c-${name})`
+                    vars += `
+    $c-${name}: ${colors[key].colors[name]};`
                 });
             });
 
-            return vars;
+            return {
+                vars: vars,
+                arr: arr
+            }
         }
     },
     data () {
         return {
             title: 'Colors',
             description: '',
-            colors: colors
+            colors: colors,
+            helpers: helpers
         }
     }
 }

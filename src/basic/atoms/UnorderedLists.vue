@@ -49,6 +49,10 @@ export default {
 
 <style lang="scss">
 .UnorderedList {
+    list-style: disc;
+    margin: 0 0 0 1rem;
+    padding: 0 0 0 1rem;
 
+    .UnorderedList { list-style: circle; }
 }
 </style>
