@@ -19,6 +19,7 @@
         <formRadios></formRadios>
         <formDropdowns></formDropdowns>
         <formTextareas></formTextareas>
+        <alerts></alerts>
         <forms></forms>
     </div>
 </template>
@@ -41,6 +42,7 @@ import FormCheckboxes from './atoms/FormCheckboxes.vue'
 import FormRadios from './atoms/FormRadios.vue'
 import FormDropdowns from './atoms/FormDropdowns.vue'
 import FormTextareas from './atoms/FormTextareas.vue'
+import Alerts from './atoms/Alerts.vue'
 import Links from './atoms/Links.vue'
 
 import Breadcrumbs from './molecules/Breadcrumbs.vue'
@@ -69,6 +71,7 @@ export default {
         FormRadios,
         FormDropdowns,
         FormTextareas,
+        Alerts,
         Links,
         Blockquotes
     }

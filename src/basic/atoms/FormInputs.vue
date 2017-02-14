@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -21,7 +21,7 @@ let markup = `
 <input class="FormInput" type="text" name="my-text" value="I'm disabled" disabled />
 <input class="FormInput" type="text" name="my-text" value="I'm read-only" readonly />
 
-<input class="FormInput js-flatpickr" type="date" name="my-date" value="" placeholder="Select a date" />
+<input class="FormInput is-date js-flatpickr" type="date" name="my-date" value="" placeholder="Select a date" />
 <input class="FormInput" type="password" name="my-password" value="" placeholder="Add password" />
 <input class="FormInput" type="email" name="my-email" value="" placeholder="Fill this in" />
 <input class="FormInput" type="number" name="my-number" value="" placeholder="Select a number" />
@@ -36,6 +36,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'FormInputs',
             title: 'Form Inputs',
             description: 'Some description',
             markup: markup
@@ -44,7 +45,7 @@ export default {
     mounted () {
         let flatpickrElements = document.querySelector('.js-flatpickr')
 
-        Flatpickr(flatpickrElements, {
+        new Flatpickr(flatpickrElements, {
             enableTime: true,
             altInput: true,
             altFormat: 'F j, Y h:i K'
@@ -55,10 +56,12 @@ export default {
 
 <style lang="scss">
 @import '../../../node_modules/flatpickr/dist/flatpickr.min';
+@import '../../assets/scss/app';
 
 .FormInput {
     border: 1px solid #e5e5e5;
     border-radius: 4px;
+    color: $c-darkest;
     font-size: 1rem;
     padding: 8px 12px;
     width: 100%;
@@ -73,6 +76,18 @@ export default {
         cursor: not-allowed;
         font-style: italic;
     }
+
+    &.is-date {
+        background: transparent;
+        color: $c-darkest;
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    &.is-info { border-color: $c-info-border; }
+    &.is-error { border-color: $c-error-border; }
+    &.is-warning { border-color: $c-warning-border; }
+    &.is-success { border-color: $c-success-border; }
 
     &::-webkit-input-placeholder { color: #e5e5e5; }
     &:-moz-placeholder { color: #e5e5e5; }

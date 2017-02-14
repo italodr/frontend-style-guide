@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -33,6 +33,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'BaseSample',
             title: 'Custom Base Sample',
             description: 'A base file of custom components for a project style guide, isolating it from the base/common style guide. You can comment this import in Custom.vue',
             obj: {},

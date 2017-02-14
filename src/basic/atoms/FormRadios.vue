@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -29,6 +29,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'FormRadios',
             title: 'Form Radios',
             description: 'Some description',
             markup: markup

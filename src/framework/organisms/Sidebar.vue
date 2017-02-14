@@ -4,8 +4,8 @@
         <div class="Sidebar-scroll">
             <div class="Sidebar-content">
                 <img class="Sidebar-logo" src="../../assets/img/logo.png">
-                <h1 class="Sidebar-title">{{ title }}</h1>
-                <h2 class="Sidebar-subtitle">{{ subtitle }}</h2>
+                <h1 class="Sidebar-title">{{ config.title }}</h1>
+                <h2 class="Sidebar-subtitle">{{ config.subtitle }}</h2>
                 <ul class="Sidebar-nav">
                     <li class="Sidebar-section" v-for="section in sections">
                         <a class="Sidebar-sectionItem" v-on:click="methods.toggleSubsection" v-if="section.title">{{ section.title }}</a>
@@ -30,6 +30,8 @@
 import mainNavigation from '../../data/main-navigation'
 import customNavigation from '../../data/custom-navigation'
 
+import config from '../../data/config.js'
+
 let navigation = [
     mainNavigation,
     customNavigation
@@ -39,8 +41,7 @@ export default {
     name: 'Sidebar',
     data () {
         return {
-            title: 'Frontend Style Guide',
-            subtitle: 'A Pattern UI Library',
+            config: config,
             sections: navigation,
             methods: {
                 toggleSubsection: function (event) {

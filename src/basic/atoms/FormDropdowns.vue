@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -40,6 +40,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'FormDropdowns',
             title: 'Form dropdowns',
             description: 'Some description',
             markup: markup
@@ -49,6 +50,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/app';
+
 .FormDropdown {
     position: relative;
     display: inline-block;
@@ -81,5 +84,14 @@ export default {
 
         &::-ms-expand { display: none; /* gte ie10 */ }
     }
+
+    &-empty { color: #e5e5e5; }
+    &.is-info .FormDropdown-select { border-color: $c-info-border; }
+    &.is-error .FormDropdown-select { border-color: $c-error-border; }
+    &.is-warning .FormDropdown-select { border-color: $c-warning-border; }
+    &.is-success .FormDropdown-select { border-color: $c-success-border; }
 }
+
+/* Demo */
+.FormDropdown { margin: 0 0 .5rem; }
 </style>

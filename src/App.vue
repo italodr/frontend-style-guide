@@ -30,5 +30,15 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    .Note {
+        border: solid $c-framework-primary;
+        border-width: 0 0 0 4px;
+        font-size: .75rem;
+        font-style: italic;
+        padding: .5rem 1rem;
+    }
+
+    a:not([class]) { color: $c-framework-secondary; }
 }
 </style>

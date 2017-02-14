@@ -1,6 +1,6 @@
 <template>
     <div class="Markup">
-        <pre><code ref="markup" :class="'language-' + language" v-html="code"></code></pre>
+        <pre><code ref="markup" :class="'language-' + language"><slot>{{ code }}</slot></code></pre>
     </div>
 </template>
 

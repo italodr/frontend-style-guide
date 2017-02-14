@@ -1,16 +1,12 @@
 export default {
-    custom: 'Custom section',
+    custom: 'My project',
     subsections: [
         {
-            title: 'Custom 1',
+            title: 'Custom section 1',
             anchors: [
                 {
-                    title: 'Custom Anchor 1',
-                    anchor: '#CustomAnchor1'
-                },
-                {
-                    title: 'Custom Anchor 2',
-                    anchor: '#CustomAnchor2'
+                    title: 'Base sample',
+                    anchor: '#BaseSample'
                 }
             ]
         }

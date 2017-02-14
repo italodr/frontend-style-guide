@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content">
@@ -43,7 +43,7 @@ import Block from '../../framework/organisms/Block'
 
 import colors from '../../data/colors.js'
 
-let helpers = `
+const helpers = `
 @each $name, $color in $colors {
     .c-#{$name} { color: #{$color}; }
     .bg-#{$name} { background: #{$color}; }
@@ -93,6 +93,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'Colors',
             title: 'Colors',
             description: '',
             colors: colors,

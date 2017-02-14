@@ -21,6 +21,9 @@ module.exports = {
     'indent': ['error', 4],
     'no-eval': 0,
     'semi': 0,
-    'no-unused-vars': 0
+    'no-unused-vars': 0,
+    'no-new': 0,
+    'one-var': 0,
+    'camelcase': 0
   }
 }

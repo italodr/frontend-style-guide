@@ -7,15 +7,6 @@
         </div>
         <slot name="tabs"></slot>
         <slot name="toggle"></slot>
-            <!-- <div class="Block-samples">
-                <span v-for="line in obj.code" v-html="line"></span>
-            </div>
-            <toggle>
-                <ul>
-                    <li v-for="line in obj.code"><pre><code class="language-markup">{{ line|removeAttr }}</code></pre></li>
-                </ul>
-            </toggle>
-        </slot> -->
     </div>
 </template>
 

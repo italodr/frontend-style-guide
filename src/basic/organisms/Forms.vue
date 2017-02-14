@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -10,23 +10,32 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
+import Validation from '../../assets/js/Validation.js'
+
+$(document).ready(function () {
+    Validation();
+});
+
 import Block from '../../framework/organisms/Block'
-import Toggle from '../../framework/molecules/Toggle.vue'
+import Toggle from '../../framework/molecules/Toggle'
 import Markup from '../../framework/atoms/Markup'
 
 let markup = `
-<form class="Form">
+<form class="Form js-validateForm" data-validate-options="example">
     <label class="FormLabel" for="exampleInputName">Nombre</label>
-    <input class="FormInput" type="text" id="exampleInputName" placeholder="Nombre">
+    <input class="FormInput" type="text" name="exampleInputName" id="exampleInputName" placeholder="Nombre">
     <label class="FormLabel" for="exampleInputLastname">Apellidos</label>
-    <input class="FormInput" type="text" id="exampleInputLastname" placeholder="Apellidos">
+    <input class="FormInput" type="text" name="exampleInputLastname" id="exampleInputLastname" placeholder="Apellidos">
     <label class="FormLabel" for="exampleInputEmail">Email</label>
-    <input class="FormInput" type="email" id="exampleInputEmail" placeholder="Email">
+    <input class="FormInput" type="email" name="exampleInputEmail" id="exampleInputEmail" placeholder="Email">
     <label class="FormLabel" for="exampleInputFile">File</label>
-    <input class="FormInput" type="file" id="exampleInputFile">
+    <input class="FormInput" type="file" name="exampleInputFile" id="exampleInputFile">
     <label class="FormLabel" for="exampleDropdown">Dropdown</label>
     <div class="FormDropdown">
-        <select class="FormDropdown-select">
+        <select class="FormDropdown-select" name="exampleDropdown">
+            <option class="FormDropdown-empty" value="">Select something...</option>
             <optgroup label="Group No 1">
                 <option value="1-1">Element 1</option>
                 <option value="1-2">Element 2</option>
@@ -39,7 +48,10 @@ let markup = `
             </optgroup>
         </select>
     </div>
-    <label class="FormCheckbox" for="CheckMe"><input class="FormCheckbox-input" type="checkbox" id="CheckMe"> Check me out before you go go!</label>
+    <label class="FormLabel" for="exampleRequired">Conditional Required sield</label>
+    <input class="FormInput" type="text" name="exampleRequired" id="exampleRequired" placeholder="Conditional Required sield">
+    <label class="FormCheckbox" for="exampleCheckboxRequire"><input class="FormCheckbox-input" name="exampleCheckboxRequire" type="checkbox" id="exampleCheckboxRequire"> Check me to require the above field</label>
+    <label class="FormCheckbox" for="Privacy"><input class="FormCheckbox-input" name="exampleCheckbox" type="checkbox" id="Privacy"> Check me out before you go go!</label>
     <button type="submit" class="Button">Submit</button>
 </form>
 `
@@ -53,6 +65,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'Form',
             title: 'Form',
             description: 'Some description',
             markup: markup

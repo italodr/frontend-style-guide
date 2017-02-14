@@ -1,8 +1,17 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
-        <div class="Block-samples" slot="content" v-html="markup"></div>
+        <div class="Block-samples" slot="content">
+            <div class="Sample u-flex--wrap">
+                <div class="u-flex--s768-12">
+                    <div v-html="markup"></div>
+                </div>
+                <div class="Sample-oposite u-flex--s768-12">
+                    <div v-html="markup"></div>
+                </div>
+            </div>
+        </div>
         <toggle slot="toggle">
             <markup language="markup" :code="markup"></markup>
         </toggle>
@@ -32,6 +41,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'Headings',
             title: 'Headings',
             description: 'Some description',
             markup: markup
@@ -58,5 +68,12 @@ h5, .t-h5,
 h6, .t-h6 {
     font-weight: 700;
     margin: 0 0 1rem;
+}
+
+.Sample {
+    &-oposite {
+        background: #333;
+        color: #fff;
+    }
 }
 </style>

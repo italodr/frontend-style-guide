@@ -10,6 +10,25 @@ $c-darkest: #111;
 
 $c-lightest: #f1f1f1;
 
+$c-framework-primary: #61bfad;
+$c-framework-secondary: #ff8fa4;
+
+$c-info-color: #31708f;
+$c-info-background: #d9edf7;
+$c-info-border: #bce8f1;
+
+$c-error-color: #a94442;
+$c-error-background: #f2dede;
+$c-error-border: #ebccd1;
+
+$c-warning-color: #8a6d3b;
+$c-warning-background: #fcf8e3;
+$c-warning-border: #faebcc;
+
+$c-success-color: #3c763d;
+$c-success-background: #dff0d8;
+$c-success-border: #d6e9c6;
+
 /* Media Queries */
 $s0: (0, 479px);
 $s480: (480px, 639px);
@@ -22,15 +41,15 @@ $s1440: (1440px, 1919px);
 $s1920: (1920px, 0);
 
 $breakpoints: (
-    (xxs, $s0),
-    (xs, $s480),
-    (sm, $s640),
-    (md, $s768),
-    (lg, $s960),
-    (xl, $s1024),
-    (xxl, $s1200),
-    (sxl, $s1440),
-    (sxxl, $s1920)
+    (s0, $s0),
+    (s480, $s480),
+    (s640, $s640),
+    (s768, $s768),
+    (s960, $s960),
+    (s1024, $s1024),
+    (s1200, $s1200),
+    (s1440, $s1440),
+    (s1920, $s1920)
 );
 
 $screen: "only screen" !default;

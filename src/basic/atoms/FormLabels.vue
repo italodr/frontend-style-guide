@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -27,6 +27,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'FormLabels',
             title: 'Form Labels',
             description: 'Some description',
             markup: markup
@@ -36,7 +37,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/app';
+
 .FormLabel {
 
+    &.is-info { color: $c-info-color; }
+    &.is-error { color: $c-error-color; }
+    &.is-warning { color: $c-warning-color; }
+    &.is-success { color: $c-success-color; }
 }
 </style>

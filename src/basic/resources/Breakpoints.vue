@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-content" slot="content">
@@ -60,15 +60,15 @@ $screen: "only screen" !default;
 
 const arr = `
 $breakpoints: (
-    (xxs, $s0),
-    (xs, $s480),
-    (sm, $s640),
-    (md, $s768),
-    (lg, $s960),
-    (xl, $s1024),
-    (xxl, $s1200),
-    (sxl, $s1440),
-    (sxxl, $s1920)
+    (s0, $s0),
+    (s480, $s480),
+    (s640, $s640),
+    (s768, $s768),
+    (s960, $s960),
+    (s1024, $s1024),
+    (s1200, $s1200),
+    (s1440, $s1440),
+    (s1920, $s1920)
 );
 `
 
@@ -122,6 +122,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'Breakpoints',
             title: 'Breakpoints',
             description: 'Some description',
             vars: vars,

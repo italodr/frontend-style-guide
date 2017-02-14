@@ -1,5 +1,5 @@
 <template>
-    <block>
+    <block :id="anchor">
         <div class="Block-samples" v-html="markup"></div>
         <toggle>
             <markup language="markup">markup</markup>
@@ -32,6 +32,7 @@ export default {
     },
     data () {
         return {
+            anchor: 'DefinitionLists',
             title: 'Definition List',
             description: 'Some description',
             markup: markup
