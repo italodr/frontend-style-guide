@@ -44,6 +44,7 @@ import Tabs from '../../framework/molecules/Tabs.vue'
 import Tab from '../../framework/atoms/Tab.vue'
 import Markup from '../../framework/atoms/Markup'
 
+import '../../assets/scss/atoms/_definition_lists.scss'
 import { VARIABLES, SASS_ARRAY, MIXINS } from '../data/BreakpointTabs'
 
 export default {

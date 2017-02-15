@@ -1,124 +1,112 @@
 export default {
     title: 'Basic',
+    type: 'basic',
     subsections: [
         {
             title: 'Resources',
+            element: 'resources',
             anchors: [
                 {
                     title: 'Dependencies',
-                    anchor: '#Dependencies'
+                    link: 'dependencies'
                 },
                 {
                     title: 'Breakpoints',
-                    anchor: '#Breakpoints'
+                    link: 'breakpoints'
                 },
                 {
                     title: 'Grids',
-                    anchor: '#Grids'
-                }
-            ]
-        },
-        {
-            title: 'Resources',
-            anchors: [
-                {
-                    title: 'Dependencies',
-                    anchor: '#Dependencies'
-                },
-                {
-                    title: 'Breakpoints',
-                    anchor: '#Breakpoints'
-                },
-                {
-                    title: 'Grids',
-                    anchor: '#Grids'
+                    link: 'grids'
                 }
             ]
         },
         {
             title: 'Atoms',
+            element: 'atoms',
             anchors: [
                 {
                     title: 'Colors',
-                    anchor: '#Colors'
+                    link: 'colors'
                 },
                 {
                     title: 'Headings',
-                    anchor: '#Headings'
+                    link: 'headings'
                 },
                 {
                     title: 'Buttons',
-                    anchor: '#Buttons'
+                    link: 'buttons'
                 },
                 {
                     title: 'Tables',
-                    anchor: '#Tables'
+                    link: 'tables'
                 },
                 {
-                    title: 'DefinitionLists',
-                    anchor: '#DefinitionLists'
+                    title: 'Definition Lists',
+                    link: 'definition-lists'
                 },
                 {
-                    title: 'OrderedLists',
-                    anchor: '#OrderedLists'
+                    title: 'Ordered Lists',
+                    link: 'ordered-lists'
                 },
                 {
-                    title: 'UnorderedLists',
-                    anchor: '#UnorderedLists'
+                    title: 'Unordered Lists',
+                    link: 'unordered-lists'
                 },
                 {
-                    title: 'FormLabels',
-                    anchor: '#FormLabels'
+                    title: 'Form Labels',
+                    link: 'form-labels'
                 },
                 {
-                    title: 'FormInputs',
-                    anchor: '#FormInputs'
+                    title: 'Form Inputs',
+                    link: 'form-inputs'
                 },
                 {
-                    title: 'FormCheckboxes',
-                    anchor: '#FormCheckboxes'
+                    title: 'Form Checkboxes',
+                    link: 'form-checkboxes'
                 },
                 {
-                    title: 'FormRadios',
-                    anchor: '#FormRadios'
+                    title: 'Form Radios',
+                    link: 'form-radios'
                 },
                 {
-                    title: 'FormDropdowns',
-                    anchor: '#FormDropdowns'
+                    title: 'Form Dropdowns',
+                    link: 'form-dropdowns'
                 },
                 {
-                    title: 'FormTextareas',
-                    anchor: '#FormTextareas'
+                    title: 'Form Textareas',
+                    link: 'form-textareas'
                 },
                 {
                     title: 'Alerts',
-                    anchor: '#Alerts'
+                    link: 'alerts'
                 },
                 {
                     title: 'Links',
-                    anchor: '#Links'
+                    link: 'links'
                 }
             ]
         },
         {
             title: 'Molecules',
+            element: 'molecules',
             anchors: [
                 {
                     title: 'Blockquotes',
-                    anchor: '#Blockquotes'
+                    link: 'blockquotes'
                 },
                 {
                     title: 'Breadcrumbs',
-                    anchor: '#Breadcrumbs'
+                    link: 'breadcrumbs'
                 }
             ]
         },
         {
             title: 'Organisms',
+            element: 'organisms',
             anchors: [
                 {
                     title: 'Forms',
-                    anchor: '#Forms'
+                    link: 'forms'
                 }
             ]
         }

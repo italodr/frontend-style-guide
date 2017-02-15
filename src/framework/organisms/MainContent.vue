@@ -1,7 +1,9 @@
 <template>
     <div class="MainContent">
         <h1 class="MainContent-title">{{ config.title }}</h1>
-        <router-view></router-view>
+        <transition>
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 

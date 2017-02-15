@@ -48,6 +48,8 @@
 <script>
 import Block from '../../framework/organisms/Block.vue'
 
+import '../../assets/scss/atoms/_definition_lists.scss'
+
 export default {
     components: {
         Block

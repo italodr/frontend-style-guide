@@ -5,40 +5,42 @@ Vue.use(VueRouter)
 
 var params;
 
+/*
+ * The require route file is built by:
+ *
+ * type: which can be both basic or custom
+ * element: which corresponds to an atomic element (atoms, molecules, ...)
+ * fileName: which is the capitalization (CamelUppercase) of the component parameter (kebab-case)
+ *
+ * e.g. /basic/atoms/definition-lists
+ */
 const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            path: '/basic/:type/:component',
-            name: 'basic',
-            component: function (resolve) {
-                var fileName = capitalize(params.component);
-                require([`./basic/${params.type}/${fileName}.vue`], resolve)
-            },
-            beforeEnter: guardRoute
-        },
-        {
-            path: '/custom/:type/:component',
-            name: 'custom',
-            component: function (resolve) {
-                var fileName = capitalize(params.component);
-                require([`./custom/${params.type}/${fileName}.vue`], resolve)
-            },
-            beforeEnter: guardRoute
+            path: '/:type/:element/:component',
+            name: 'common',
+            component: (resolve) => {
+                require([`./${params.type}/${params.element}/${params.fileName}.vue`], resolve)
+            }
         }
     ]
 })
 
-function guardRoute (to, from, next) {
+router.beforeEach((to, from, next) => {
     params = to.params;
-    next()
-}
+    if (Object.keys(params).length !== 0 && params.constructor === Object) {
+        params.fileName = capitalize(params.component);
+    }
+
+    next();
+});
 
 function capitalize (string) {
-    var tokens = string.split('-'),
+    let tokens = string.split('-'),
         new_string = '';
 
-    for (var i = 0; i < tokens.length; i++) {
+    for (let i = 0; i < tokens.length; i++) {
         new_string += tokens[i].charAt(0).toUpperCase() + tokens[i].slice(1);
     }
 

@@ -34,6 +34,7 @@ import Tabs from '../../framework/molecules/Tabs'
 import Block from '../../framework/organisms/Block'
 
 import '../../assets/scss/atoms/_alerts.scss'
+import '../../assets/scss/organisms/_forms.scss'
 
 let markup = `
 <div class="Alert is-info js-alert">This is an info alert message</div>
@@ -89,5 +90,6 @@ export default {
 </script>
 
 <style lang="scss">
+.FormInput, .FormDropdown { margin: 0 0 .5rem; }
 .Alert { margin: 0 0 1rem; }
 </style>

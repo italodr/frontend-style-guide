@@ -14,8 +14,13 @@
                                 <a class="Sidebar-subsectionItem" v-bind:href="subsection.anchor" v-if="subsection.title">{{ subsection.title }}</a>
                                 <ul class="Sidebar-anchors" v-if="subsection.anchors">
                                     <li class="Sidebar-anchor" v-for="anchor in subsection.anchors">
-                                        <a class="Sidebar-anchorItem" v-bind:href="anchor.anchor">{{ anchor.title }}</a>
+                                        <a class="Sidebar-anchorItem" v-bind:href="`/${section.type}/${subsection.element}/${anchor.link}`">{{ anchor.title }}</a>
                                     </li>
+                                    <!--
+                                    <router-link class="Sidebar-anchor" v-for="anchor in subsection.anchors" :to="{ name: 'common', params: { type: section.type, element: subsection.element, component: anchor.link }}" tag="li">
+                                        <a class="Sidebar-anchorItem">{{ anchor.title }}</a>
+                                    </router-link>
+                                    -->
                                 </ul>
                             </li>
                         </ul>
