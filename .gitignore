@@ -1,8 +1,15 @@
+# OS GENERATED FILES
 .DS_Store
+
+# NODE
 node_modules/
 dist/
 npm-debug.log
+
+# TEST
 test/unit/coverage
+
+# SAMPLE CONTENT
 src/data/**/*.js
 !src/data/**/config.js
 !src/data/**/colors.js

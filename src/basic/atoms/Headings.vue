@@ -4,24 +4,37 @@
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content">
             <div class="Sample u-flex--wrap">
-                <div class="u-flex--s768-12">
+                <div class="Sample-column u-flex--s768-12">
                     <div v-html="markup"></div>
                 </div>
-                <div class="Sample-oposite u-flex--s768-12">
+                <div class="Sample-column is-oposite u-flex--s768-12">
                     <div v-html="markup"></div>
                 </div>
             </div>
+            <p class="Note">Requires the use of <a href="#Breakpoints">Fluid Font Type</a></p>
         </div>
-        <toggle slot="toggle">
-            <markup language="markup" :code="markup"></markup>
-        </toggle>
+        <tabs slot="tabs">
+            <tab slot="tab" label="Usage" selected>
+                <markup slot="tabContent" language="markup" :code="markup"></markup>
+            </tab>
+            <tab slot="tab" label="Mixins">
+                <markup slot="tabContent" language="scss" :code="mixins"></markup>
+            </tab>
+            <tab slot="tab" label="Sass classes">
+                <markup slot="tabContent" language="scss" :code="sass"></markup>
+            </tab>
+        </tabs>
     </block>
 </template>
 
 <script>
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
+import Tabs from '../../framework/molecules/Tabs'
+import Tab from '../../framework/atoms/Tab'
 import Markup from '../../framework/atoms/Markup'
+
+import { MIXINS, SASS } from '../data/HeadingTabs'
 
 let markup = `
 <h1 class="t-h1">This is an h1 heading</h1>
@@ -37,13 +50,17 @@ export default {
     components: {
         Block,
         Toggle,
-        Markup
+        Markup,
+        Tabs,
+        Tab
     },
     data () {
         return {
             anchor: 'Headings',
             title: 'Headings',
             description: 'Some description',
+            mixins: MIXINS,
+            sass: SASS,
             markup: markup
         }
     }
@@ -71,9 +88,13 @@ h6, .t-h6 {
 }
 
 .Sample {
-    &-oposite {
-        background: #333;
-        color: #fff;
+    &-column {
+        padding: 1rem;
+
+        &.is-oposite {
+            background: #333;
+            color: #fff;
+        }
     }
 }
 </style>

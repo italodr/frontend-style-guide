@@ -1,6 +1,6 @@
 <template>
     <div class="Tabs">
-        <button class="Tabs-item" :class="{ active: (activeTab === tab) }" v-for="tab in tabs" @click="activate(tab)">{{ tab }}</button>
+        <button class="Tabs-item" :class="{ 'is-active': (activeTab === tab) }" v-for="tab in tabs" @click="activate(tab)">{{ tab }}</button>
         <slot name="tab"></slot>
     </div>
 </template>
@@ -32,7 +32,7 @@ export default{
         padding: 12px 24px;
 
         &:first-child { border: 0; }
-        &:hover, &.active { background: #f1f1f1; }
+        &:hover, &.is-active { background: #f1f1f1; }
     }
 
     &-content {
