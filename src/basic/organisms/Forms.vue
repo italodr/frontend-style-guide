@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -21,6 +21,8 @@ $(document).ready(function () {
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/organisms/_forms.scss'
 
 let markup = `
 <form class="Form js-validateForm" data-validate-options="example">
@@ -65,7 +67,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Form',
             title: 'Form',
             description: 'Some description',
             markup: markup
@@ -75,7 +76,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* Demo */
 .Form {
     .FormCheckbox {
         display: block;

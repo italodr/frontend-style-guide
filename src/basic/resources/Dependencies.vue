@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content">
@@ -54,7 +54,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Dependencies',
             title: 'Dependencies',
             description: 'Recommended Node.js dependencies'
         }

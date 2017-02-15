@@ -1,0 +1,56 @@
+@import '../app';
+
+.Colors {
+    &-section { margin: 0 0 2rem; }
+
+    &-title {
+        border: solid #ccc;
+        border-width: 0 0 1px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+    }
+
+    &-list {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        align-items: center;
+        display: flex;
+        padding: 0 1rem 1rem 0;
+        width: 100%;
+
+        @include breakpoint($s640) { width: 50%; }
+        @include breakpoint($s768) { width: 33.33333%; }
+        @include breakpoint($s960) { width: 25%; }
+        @include breakpoint($s1200) { width: 20%; }
+    }
+
+    &-code,
+    &-hex {
+        display: block;
+        font-size: .85rem;
+        line-height: 1.75;
+    }
+
+    &-code {
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    &-info {
+        padding: 0 0 0 1rem;
+        width: 100%;
+    }
+
+    &-sample {
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        flex: 0 0 50px;
+        height: 50px;
+        width: 50px;
+    }
+}

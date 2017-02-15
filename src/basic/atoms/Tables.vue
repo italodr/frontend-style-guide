@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_tables.scss'
 
 let markup = `
 <table class="Table">
@@ -51,7 +53,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Tables',
             title: 'Table',
             description: 'Some description',
             markup: markup
@@ -61,58 +62,4 @@ export default {
 </script>
 
 <style lang="scss">
-.Table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin:0;
-    padding:0;
-    width: 100%;
-
-    tr {
-        border: 1px solid #ddd;
-        padding: 5px;
-    }
-
-    th, td {
-        padding: 10px;
-        text-align: center;
-    }
-
-    th {
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .Table {
-        border: 0;
-
-        thead { display: none; }
-
-        tr {
-            border-bottom: 2px solid #ddd;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        td {
-            border-bottom: 1px dotted #ccc;
-            display: block;
-            font-size: 13px;
-            text-align: right;
-
-            &:last-child { border-bottom: 0; }
-
-            &::before {
-                content: attr(data-label);
-                float: left;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-        }
-    }
-}
 </style>

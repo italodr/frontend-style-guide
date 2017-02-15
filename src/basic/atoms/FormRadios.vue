@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_form_radios.scss'
 
 let markup = `
 <label class="FormRadio"><input class="FormRadio-input" type="radio" name="my-radio" value="1" /> Sample of a radio button</label>
@@ -29,7 +31,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'FormRadios',
             title: 'Form Radios',
             description: 'Some description',
             markup: markup
@@ -39,7 +40,4 @@ export default {
 </script>
 
 <style lang="scss">
-.FormRadio {
-
-}
 </style>

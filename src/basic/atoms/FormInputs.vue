@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -15,6 +15,8 @@ import Flatpickr from 'flatpickr'
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_form_inputs.scss'
 
 let markup = `
 <input class="FormInput" type="text" name="my-text" value="" placeholder="Fill this in" />
@@ -36,7 +38,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'FormInputs',
             title: 'Form Inputs',
             description: 'Some description',
             markup: markup
@@ -55,46 +56,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../node_modules/flatpickr/dist/flatpickr.min';
-@import '../../assets/scss/app';
-
-.FormInput {
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    color: $c-darkest;
-    font-size: 1rem;
-    padding: 8px 12px;
-    width: 100%;
-
-    &:disabled {
-        background: #e5e5e5;
-        cursor: not-allowed;
-    }
-
-    &:read-only {
-        color: #ccc;
-        cursor: not-allowed;
-        font-style: italic;
-    }
-
-    &.is-date {
-        background: transparent;
-        color: $c-darkest;
-        cursor: pointer;
-        font-style: normal;
-    }
-
-    &.is-info { border-color: $c-info-border; }
-    &.is-error { border-color: $c-error-border; }
-    &.is-warning { border-color: $c-warning-border; }
-    &.is-success { border-color: $c-success-border; }
-
-    &::-webkit-input-placeholder { color: #e5e5e5; }
-    &:-moz-placeholder { color: #e5e5e5; }
-    &::-moz-placeholder { color: #e5e5e5; }
-    &:-ms-input-placeholder { color: #e5e5e5; }
-}
-
-/* Demo */
 .FormInput { margin: 0 0 .5rem; }
 </style>

@@ -1,0 +1,39 @@
+@import '../../../../node_modules/flatpickr/dist/flatpickr.min';
+@import '../app';
+
+.FormInput {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: $c-darkest;
+    font-size: 1rem;
+    padding: 8px 12px;
+    width: 100%;
+
+    &:disabled {
+        background: #e5e5e5;
+        cursor: not-allowed;
+    }
+
+    &:read-only {
+        color: #ccc;
+        cursor: not-allowed;
+        font-style: italic;
+    }
+
+    &.is-date {
+        background: transparent;
+        color: $c-darkest;
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    &.is-info { border-color: $c-info-border; }
+    &.is-error { border-color: $c-error-border; }
+    &.is-warning { border-color: $c-warning-border; }
+    &.is-success { border-color: $c-success-border; }
+
+    &::-webkit-input-placeholder { color: #e5e5e5; }
+    &:-moz-placeholder { color: #e5e5e5; }
+    &::-moz-placeholder { color: #e5e5e5; }
+    &:-ms-input-placeholder { color: #e5e5e5; }
+}

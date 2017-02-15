@@ -1,16 +1,18 @@
 <template>
-    <block :id="anchor">
-        <div class="Block-samples" v-html="markup"></div>
-        <toggle>
+    <block>
+        <div class="Block-samples" slot="content" v-html="markup"></div>
+        <toggle slot="toggle">
             <markup language="markup">markup</markup>
         </toggle>
     </block>
 </template>
 
 <script>
-import Block from '../../framework/organisms/Block'
-import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+import Toggle from '../../framework/molecules/Toggle.vue'
+import Block from '../../framework/organisms/Block'
+
+import '../../assets/scss/atoms/_definition_lists.scss'
 
 let markup = `
 <dl class="DefinitionList">
@@ -32,7 +34,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'DefinitionLists',
             title: 'Definition List',
             description: 'Some description',
             markup: markup
@@ -42,53 +43,5 @@ export default {
 </script>
 
 <style lang="scss">
-.DefinitionList {
-    &-title, &-value { display: block; }
-
-    &-title {
-        border: solid #f1f1f1;
-        border-width: 1px 0 0;
-        font-weight: 700;
-        margin: 0 0 .25rem;
-        padding: .5rem 0 0;
-
-        &:first-child { border: 0; }
-    }
-
-    &-value {
-        margin: 0 0 .5rem;
-
-        a { word-break: break-all; }
-    }
-}
-
-@media screen and ('min-width: 768px') {
-    .DefinitionList {
-        align-items: flex-start;
-        display: flex;
-        flex-wrap: wrap;
-
-        &-title, &-value {
-            border: solid #f1f1f1;
-            border-width: 1px 0 0;
-            margin: 0;
-            padding: .5rem 0;
-
-            &:nth-child(-n + 2) { border-width: 0; }
-        }
-
-        &-title { width: 20%; }
-
-        &-value {
-            width: 80%;
-
-            &::after {
-                content: '\A';
-                white-space: pre;
-            }
-        }
-    }
-}
-/* Style for framework demo */
 .DefinitionList { margin: 0 0 2rem; }
 </style>

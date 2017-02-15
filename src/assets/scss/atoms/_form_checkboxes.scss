@@ -1,0 +1,9 @@
+@import '../app';
+
+.FormCheckbox {
+
+    &.is-info { color: $c-info-color; }
+    &.is-error { color: $c-error-color; }
+    &.is-warning { color: $c-warning-color; }
+    &.is-success { color: $c-success-color; }
+}

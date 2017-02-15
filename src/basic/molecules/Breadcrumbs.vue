@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/molecules/_breadcrumbs.scss'
 
 let markup = `
 <ul class="Breadcrumbs-" itemscope="" itemtype="http://schema.org/BreadcrumbList">
@@ -44,7 +46,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Breadcrumbs',
             title: 'Breadcrumbs',
             description: 'Some description',
             markup: markup
@@ -54,18 +55,4 @@ export default {
 </script>
 
 <style lang="scss">
-.Breadcrumbs {
-    &-item {
-        display: inline-block;
-
-        &:not(:last-child) {
-            &::after {
-                content: '\203A';
-                display: inline-block;
-                font-size: 1.25em;
-                margin: 0 8px;
-            }
-        }
-    }
-}
 </style>

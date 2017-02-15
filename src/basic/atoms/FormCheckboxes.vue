@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -10,9 +10,11 @@
 </template>
 
 <script>
-import Block from '../../framework/organisms/Block'
-import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+import Toggle from '../../framework/molecules/Toggle.vue'
+import Block from '../../framework/organisms/Block'
+
+import '../../assets/scss/atoms/_form_checkboxes.scss'
 
 let markup = `
 <label class="FormCheckbox"><input class="FormCheckbox-input" type="checkbox" name="my-checkbox" value="1" /> Sample of a checkbox</label>
@@ -29,7 +31,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'FormCheckboxes',
             title: 'Form Checkboxes',
             description: 'Some description',
             markup: markup
@@ -39,13 +40,4 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-.FormCheckbox {
-
-    &.is-info { color: $c-info-color; }
-    &.is-error { color: $c-error-color; }
-    &.is-warning { color: $c-warning-color; }
-    &.is-success { color: $c-success-color; }
-}
 </style>

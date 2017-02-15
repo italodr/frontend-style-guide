@@ -14,6 +14,8 @@ import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
+import '../../assets/scss/atoms/_form_textareas.scss'
+
 let markup = `
 <textarea class="FormTextarea" name="my-textarea"></textarea>
 <textarea class="FormTextarea no-resize" name="my-textarea"></textarea>
@@ -40,30 +42,4 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-.FormTextarea {
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    color: $c-darkest;
-    font-size: 1rem;
-    line-height: 1.2;
-    min-height: 150px;
-    max-width: 100%;
-    padding: 8px 12px;
-    width: 100%;
-
-    &.no-resize { resize: none; }
-
-    &:disabled {
-        background: #e5e5e5;
-        cursor: not-allowed;
-    }
-
-    &:read-only {
-        color: #666;
-        cursor: not-allowed;
-        font-style: italic;
-    }
-}
 </style>

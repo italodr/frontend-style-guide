@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div slot="content">
@@ -71,15 +71,13 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
 .Sample {
     margin: 0 0 2rem;
 
     &-item {
-        background: rgba($c-framework-primary, .5);
+        background: rgba(#f90, .5);
         height: 50px;
-        outline: 1px solid $c-framework-primary;
+        outline: 1px solid #f90;
     }
 
     &-margin { margin: 2rem 0 0; }

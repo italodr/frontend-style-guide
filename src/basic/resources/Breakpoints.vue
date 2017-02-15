@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-content" slot="content">
@@ -55,7 +55,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Breakpoints',
             title: 'Breakpoints',
             description: 'Some description',
             vars: VARIABLES,

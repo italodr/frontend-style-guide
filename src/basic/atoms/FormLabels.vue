@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -14,6 +14,8 @@ import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
 
+import '../../assets/scss/atoms/_form_labels.scss'
+
 let markup = `
 <label class="FormLabel">Este es un label</label>
 `
@@ -27,7 +29,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'FormLabels',
             title: 'Form Labels',
             description: 'Some description',
             markup: markup
@@ -37,13 +38,4 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-.FormLabel {
-
-    &.is-info { color: $c-info-color; }
-    &.is-error { color: $c-error-color; }
-    &.is-warning { color: $c-warning-color; }
-    &.is-success { color: $c-success-color; }
-}
 </style>

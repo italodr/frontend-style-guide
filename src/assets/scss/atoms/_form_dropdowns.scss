@@ -1,0 +1,42 @@
+@import '../app';
+
+.FormDropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    &::after {
+        content: '\203A';
+        display: block;
+        font-size: 1.35rem;
+        pointer-events: none;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        transform-origin: center;
+        z-index: 1;
+    }
+
+    &-select {
+        -webkit-appearance: none;
+        appearance: none;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 1;
+        padding: 8px 50px 8px 12px;
+        width: 100%;
+        outline: 0 !important;
+
+        &::-ms-expand { display: none; /* gte ie10 */ }
+    }
+
+    &-empty { color: #e5e5e5; }
+    &.is-info .FormDropdown-select { border-color: $c-info-border; }
+    &.is-error .FormDropdown-select { border-color: $c-error-border; }
+    &.is-warning .FormDropdown-select { border-color: $c-warning-border; }
+    &.is-success .FormDropdown-select { border-color: $c-success-border; }
+}

@@ -1,24 +1,18 @@
 <template>
     <div class="MainContent">
-        <h1 class="MainContent-title">{{ title }}</h1>
-        <basic></basic>
-        <custom></custom>
+        <h1 class="MainContent-title">{{ config.title }}</h1>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import Basic from '../../basic/Basic.vue'
-import Custom from '../../custom/Custom'
+import config from '../../data/config.js'
 
 export default {
     name: 'MainContent',
-    components: {
-        Basic,
-        Custom
-    },
     data () {
         return {
-            title: 'Frontend Style Guide'
+            config: config
         }
     }
 }

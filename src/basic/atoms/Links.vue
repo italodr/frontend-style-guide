@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_links.scss'
 
 let markup = `
 <a class="Link" href="#">Submit</a>
@@ -37,7 +39,4 @@ export default {
 </script>
 
 <style lang="scss">
-.Link {
-
-}
 </style>

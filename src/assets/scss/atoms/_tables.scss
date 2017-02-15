@@ -1,0 +1,54 @@
+@import '../app';
+
+.Table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin:0;
+    padding:0;
+    width: 100%;
+
+    tr {
+        border: 1px solid #ddd;
+        padding: 5px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @include breakpoint-max($s640) {
+        border: 0;
+
+        thead { display: none; }
+
+        tr {
+            border-bottom: 2px solid #ddd;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        td {
+            border-bottom: 1px dotted #ccc;
+            display: block;
+            font-size: 13px;
+            text-align: right;
+
+            &:last-child { border-bottom: 0; }
+
+            &::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

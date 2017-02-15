@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -27,11 +27,13 @@ $(document).ready(function () {
     });
 });
 
-import Block from '../../framework/organisms/Block'
-import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
-import Tabs from '../../framework/molecules/Tabs'
 import Tab from '../../framework/atoms/Tab'
+import Toggle from '../../framework/molecules/Toggle.vue'
+import Tabs from '../../framework/molecules/Tabs'
+import Block from '../../framework/organisms/Block'
+
+import '../../assets/scss/atoms/_alerts.scss'
 
 let markup = `
 <div class="Alert is-info js-alert">This is an info alert message</div>
@@ -78,7 +80,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Alerts',
             title: 'Alerts',
             description: 'Some description',
             markup: markup
@@ -88,51 +89,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-.Alert {
-    border: 1px solid;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 1rem 2rem;
-    position: relative;
-    width: 100%;
-
-    &::after {
-        color: currentColor;
-        content: '×';
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    &.is-info {
-        background: $c-info-background;
-        border-color: $c-info-border;
-        color: $c-info-color;
-    }
-
-    &.is-error {
-        background: $c-error-background;
-        border-color: $c-error-border;
-        color: $c-error-color;
-    }
-
-    &.is-warning {
-        background: $c-warning-background;
-        border-color: $c-warning-border;
-        color: $c-warning-color;
-    }
-
-    &.is-success {
-        background: $c-success-background;
-        border-color: $c-success-border;
-        color: $c-success-color;
-    }
-}
-
-/* Demo */
 .Alert { margin: 0 0 1rem; }
 </style>

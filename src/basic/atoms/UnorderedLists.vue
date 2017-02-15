@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_unordered_lists.scss'
 
 let markup = `
 <ul class="UnorderedList">
@@ -39,7 +41,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'UnorderedLists',
             title: 'Unordered Lists',
             description: 'Some description',
             markup: markup
@@ -49,11 +50,4 @@ export default {
 </script>
 
 <style lang="scss">
-.UnorderedList {
-    list-style: disc;
-    margin: 0 0 0 1rem;
-    padding: 0 0 0 1rem;
-
-    .UnorderedList { list-style: circle; }
-}
 </style>

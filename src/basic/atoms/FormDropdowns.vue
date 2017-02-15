@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content" v-html="markup"></div>
@@ -13,6 +13,8 @@
 import Block from '../../framework/organisms/Block'
 import Toggle from '../../framework/molecules/Toggle.vue'
 import Markup from '../../framework/atoms/Markup'
+
+import '../../assets/scss/atoms/_form_dropdowns.scss'
 
 let markup = `
 <div class="FormDropdown">
@@ -50,48 +52,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-.FormDropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-
-    &::after {
-        content: '\203A';
-        display: block;
-        font-size: 1.35rem;
-        pointer-events: none;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%) rotate(90deg);
-        transform-origin: center;
-        z-index: 1;
-    }
-
-    &-select {
-        appearance: none;
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-        line-height: 1;
-        padding: 8px 50px 8px 12px;
-        width: 100%;
-        outline: 0 !important;
-
-        &::-ms-expand { display: none; /* gte ie10 */ }
-    }
-
-    &-empty { color: #e5e5e5; }
-    &.is-info .FormDropdown-select { border-color: $c-info-border; }
-    &.is-error .FormDropdown-select { border-color: $c-error-border; }
-    &.is-warning .FormDropdown-select { border-color: $c-warning-border; }
-    &.is-success .FormDropdown-select { border-color: $c-success-border; }
-}
-
-/* Demo */
 .FormDropdown { margin: 0 0 .5rem; }
 </style>

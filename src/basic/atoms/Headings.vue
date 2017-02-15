@@ -1,5 +1,5 @@
 <template>
-    <block :id="anchor">
+    <block>
         <div slot="title">{{ title }}</div>
         <div slot="description">{{ description }}</div>
         <div class="Block-samples" slot="content">
@@ -34,6 +34,7 @@ import Tabs from '../../framework/molecules/Tabs'
 import Tab from '../../framework/atoms/Tab'
 import Markup from '../../framework/atoms/Markup'
 
+import '../../assets/scss/atoms/_headings.scss'
 import { MIXINS, SASS } from '../data/HeadingTabs'
 
 let markup = `
@@ -56,7 +57,6 @@ export default {
     },
     data () {
         return {
-            anchor: 'Headings',
             title: 'Headings',
             description: 'Some description',
             mixins: MIXINS,
@@ -68,25 +68,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/app';
-
-h1, .t-h1, .s-h1 { @include fluid-type(34px, 48px); }
-h2, .t-h2, .s-h2 { @include fluid-type(28px, 36px); }
-h3, .t-h3, .s-h3 { @include fluid-type(24px, 32px); }
-h4, .t-h4, .s-h4 { @include fluid-type(20px, 28px); }
-h5, .t-h5, .s-h5 { @include fluid-type(16px, 24px); }
-h6, .t-h6, .s-h6 { @include fluid-type(14px, 18px); }
-
-h1, .t-h1,
-h2, .t-h2,
-h3, .t-h3,
-h4, .t-h4,
-h5, .t-h5,
-h6, .t-h6 {
-    font-weight: 700;
-    margin: 0 0 1rem;
-}
-
 .Sample {
     &-column {
         padding: 1rem;
