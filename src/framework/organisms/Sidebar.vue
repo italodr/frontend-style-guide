@@ -16,7 +16,7 @@
                                     <li class="Sidebar-anchor" v-for="anchor in subsection.anchors">
                                         <a class="Sidebar-anchorItem" v-bind:href="`/${section.type}/${subsection.element}/${anchor.link}`">{{ anchor.title }}</a>
                                     </li>
-                                    <!--
+                                    <!-- TODO: find a better solution to use router-link
                                     <router-link class="Sidebar-anchor" v-for="anchor in subsection.anchors" :to="{ name: 'common', params: { type: section.type, element: subsection.element, component: anchor.link }}" tag="li">
                                         <a class="Sidebar-anchorItem">{{ anchor.title }}</a>
                                     </router-link>

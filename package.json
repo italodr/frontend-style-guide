@@ -5,6 +5,7 @@
   "author": "Italo <italodr@gmail.com>",
   "private": true,
   "scripts": {
+    "serve": "serve dist --single",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
@@ -67,6 +68,7 @@
     "prismjs": "^1.6.0",
     "sass-loader": "^4.1.1",
     "semver": "^5.3.0",
+    "serve": "3.3.1",
     "shelljs": "^0.7.4",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
