@@ -12,7 +12,8 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-router": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -72,7 +73,6 @@
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
     "vue-loader": "^10.0.0",
-    "vue-router": "^2.2.1",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^1.13.2",
