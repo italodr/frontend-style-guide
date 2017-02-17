@@ -6,6 +6,9 @@ node_modules/
 dist/
 npm-debug.log
 
+# YARN
+yarn-error.log
+
 # TEST
 test/unit/coverage
 
