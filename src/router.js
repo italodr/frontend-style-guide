@@ -15,6 +15,7 @@ var params;
  * e.g. /basic/atoms/definition-lists
  */
 const router = new VueRouter({
+    mode: 'history',
     routes: [
         {
             path: '/:type/:element/:component',
